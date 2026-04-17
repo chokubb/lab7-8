@@ -237,3 +237,10 @@ h1 {
 .action-btn:hover {
   transform: translateY(-1px);
 }
+
+.primary-btn:disabled,
+.inventory-form input:disabled,
+.inventory-form textarea:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

@@ -1,8 +1,17 @@
 import { useState } from "react";
 
-function InventoryForm({ initialData, onSubmit, submitLabel }) {
-  const [inventoryName, setInventoryName] = useState(initialData.inventory_name || "");
-  const [description, setDescription] = useState(initialData.description || "");
+function InventoryForm({
+  initialData,
+  onSubmit,
+  submitLabel,
+  disabled = false,
+}) {
+  const [inventoryName, setInventoryName] = useState(
+    initialData.inventory_name || ""
+  );
+  const [description, setDescription] = useState(
+    initialData.description || ""
+  );
   const [photo, setPhoto] = useState(initialData.photo || "");
   const [error, setError] = useState("");
 
@@ -42,6 +51,7 @@ function InventoryForm({ initialData, onSubmit, submitLabel }) {
           type="text"
           value={inventoryName}
           onChange={(e) => setInventoryName(e.target.value)}
+          disabled={disabled}
         />
       </label>
 
@@ -51,19 +61,25 @@ function InventoryForm({ initialData, onSubmit, submitLabel }) {
           rows="5"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
+          disabled={disabled}
         />
       </label>
 
       <label>
         Фото
-        <input type="file" accept="image/*" onChange={handleFileChange} />
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleFileChange}
+          disabled={disabled}
+        />
       </label>
 
       {photo && <img className="preview-image" src={photo} alt="preview" />}
 
       {error && <p className="form-error">{error}</p>}
 
-      <button type="submit" className="primary-btn">
+      <button type="submit" className="primary-btn" disabled={disabled}>
         {submitLabel}
       </button>
     </form>
