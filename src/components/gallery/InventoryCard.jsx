@@ -13,6 +13,8 @@ function InventoryCard({ item, onClick, isFavorite, onToggleFavorite }) {
           e.stopPropagation();
           onToggleFavorite(item);
         }}
+        aria-label={isFavorite ? "Видалити з улюблених" : "Додати в улюблені"}
+        title={isFavorite ? "Видалити з улюблених" : "Додати в улюблені"}
       >
         {isFavorite ? "❤️" : "🤍"}
       </button>
