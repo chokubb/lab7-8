@@ -3,25 +3,27 @@ const STORAGE_KEY = "inventory_items";
 const initialInventory = [
   {
     id: crypto.randomUUID(),
-    inventory_name: "Керамічна кружка",
-    description: "Світла керамічна кружка для щоденного використання.",
-    photo: "https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?auto=format&fit=crop&w=500&q=80",
+    inventory_name: "Зелений чай Сенча",
+    description: "Японський зелений чай з ніжним трав’янистим смаком та легкою свіжістю. Ідеально підходить для щоденного вживання.",
+    photo: "https://tea-puer.com.ua/image/1%20photo%20card/Zelenyj%20chaj%20Sencha%20Makoto%20-%20100%20g/Zelenyj%20chaj%20Sencha%20Makoto%20-%20100%20g.jpg?auto=format&fit=crop&w=500&q=80"
   },
   {
     id: crypto.randomUUID(),
-    inventory_name: "Настільна лампа",
-    description: "Компактна лампа для робочого столу з м’яким світлом.",
-    photo: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=500&q=80",
+    inventory_name: "Чорний чай Ассам",
+    description: "Насичений чорний чай з Індії з міцним смаком та легкими солодовими нотками. Добре поєднується з молоком.",
+    photo: "https://svit-chaju.ua/content/images/20/850x850l80mc0/chernyy-chay-assam-dayrial-93019558869997.jpg?auto=format&fit=crop&w=500&q=80"
   },
   {
     id: crypto.randomUUID(),
-    inventory_name: "Блокнот",
-    description: "Щоденник для записів і планування.",
-    photo: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=500&q=80",
-  },
+    inventory_name: "Ромашковий чай",
+    description: "Трав’яний чай з ромашки з м’яким заспокійливим ефектом. Ідеальний для вечірнього відпочинку.",
+    photo: "https://t-coffee.com.ua/image/cache/catalog/image/data/news/news_2/romashka3.webp?auto=format&fit=crop&w=500&q=80"
+  }
 ];
 
 function loadInventory() {
+  //localStorage.removeItem(STORAGE_KEY);
+  
   const stored = localStorage.getItem(STORAGE_KEY);
 
   if (!stored) {

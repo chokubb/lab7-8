@@ -39,7 +39,7 @@ function AdminInventory() {
       <div className="page-header">
         <div>
           <p className="eyebrow">Lab 7</p>
-          <h1>Адмін-панель складу</h1>
+          <h1>Адмін-панель чайного складу</h1>
           <p className="page-text">
             Керування інвентарем: перегляд, створення, редагування та видалення позицій.
           </p>
